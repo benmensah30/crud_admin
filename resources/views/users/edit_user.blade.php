@@ -1,10 +1,15 @@
+@extends('layouts.base')
+
+@section('content')
+    @include('includes.slidebar')
+    
     <div class="wrap-content">
         @include('includes.appbar')
-
+        
         <br /><br /><br />
-
+        
         <div class="container">
-
+    
             @if ($message = Session::get('success'))
                 <ul class="alert alert-success">
                     <li>{{ $message }}</li>
@@ -25,7 +30,7 @@
                             <form action="{{ route('users.update', $user->id) }}" method="post">
                                 
                                 @csrf
-
+    
                                 @if ($errors->any())
                                     <ul class="alert alert-danger">
                                         {!! implode('', $errors->all('<p>:message</p>')) !!}
@@ -37,15 +42,15 @@
                                 <div class="row gy-3 overflow-hidden">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="`text" value="{{ $user->name }}" class="form-control" name="name" id="name" placeholder="name@example.com" >
                                             <label for="name" class="form-label">Nom</label>
+                                            <input type="`text" value="{{ $user->name }}" class="form-control" name="name" id="name" placeholder="Nouveau nom..." >
                                         </div>
                                     </div>
                                     
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="`text" value="{{ $user->email }}" class="form-control" name="email" id="email" placeholder="name@example.com" >
                                             <label for="email" class="form-label">Email</label>
+                                            <input type="`text" value="{{ $user->email }}" class="form-control" name="email" id="email" placeholder="name@example.com" >
                                         </div>
                                     </div>
                                     
@@ -81,4 +86,8 @@
                 </div>
             </div>
         </div>
+        
+        
     </div>
+    
+@endsection

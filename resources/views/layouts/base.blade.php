@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/datatable/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/summernote/summernote.min.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <title>Admin Vs Users</title>
+    <title>Benji</title>
 </head>
 
 <body>

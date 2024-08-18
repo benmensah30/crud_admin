@@ -1,18 +1,29 @@
-@include('includes.appbar')
-<div class="wrap-content">
+@extends('layouts.base')
+
+@section('content')
+    @include('includes.slidebar')
+
+    <div class="wrap-content">
+        @include('includes.appbar')
+
         <br /><br /><br />
 
-        @php
-            $user = Auth::user();
-        @endphp
+        <div class="wrap-content">
+            <br /><br /><br />
 
-        <div class="container">
-            <div class="border datatable-cover">
-                <h2>Bienvenue {{ $user->name }} sur votre page d'acceuil, vous êtes administrateur</h2>
+            @php
+            $user = Auth::user();
+            @endphp
+
+            <div class="container">
+                <div class="border datatable-cover">
+                    <h2>Bienvenue {{ $user->name }} sur votre page d'acceuil, <br />vous êtes administrateur</h2>
+                </div>
             </div>
         </div>
     </div>
 
+@endsection
 
 <style>
     #countdown {
@@ -20,4 +31,3 @@
         font-family: Arial, sans-serif;
     }
 </style>
-

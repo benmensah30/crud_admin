@@ -7,7 +7,7 @@
 
             @if ($user && $user->badge == 1)
                 <td>
-                    <a href="{{ route('admin.index') }}">
+                    <a href="{{ route('admin.dashboard') }}">
                         <b>Home</b>
                     </a>
                 </td>
